@@ -1,0 +1,271 @@
+/* Reiniciar estilos */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #949292;
+    color: #333;
+    background-image: url('vector_sedign.png'); /* Cambia esta ruta a la ubicación de tu imagen */
+    background-size: cover; /* La imagen cubrirá toda el área del fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que la imagen de fondo se quede fija al hacer scroll */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Fondo Cambiante */
+.background-slider {
+    position: relative;
+    height: 300px; /* Ajusta la altura según necesites */
+    overflow: hidden; /* Oculta cualquier contenido que sobrepase el contenedor */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Blog_Reloj.png.webp'); /* Imagen inicial */
+    background-size: cover;
+    background-position: center;
+    animation: slide 12s infinite; /* Duración total de la animación */
+    z-index: 0; /* Asegura que el fondo esté detrás */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-align: center;
+}
+
+    
+@keyframes slide {
+    0% {
+        background-image: url('combinacion-de-traje-azul-corbata-vinotinto.jpg');
+    }
+    33% {
+        background-image: url('JOYAS.MEN.jpg');
+    }
+    66% {
+        background-image: url('pngtree-.jpg');
+    }
+    100% {
+        background-image: url('Blog_Reloj.png.jpg'); /* Regresa a la primera imagen */
+    }
+}
+
+.content {
+    position: relative; /* Para que el contenido esté encima del fondo */
+    z-index: 1;
+    text-align: center;
+    color: rgb(255, 252, 252);
+    padding: 20px;
+}
+/* Estilo para el texto dentro del fondo cambiante */
+.background-slider h2,
+.background-slider p {
+    color: #ffffff;
+    background-color: #ffffff(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center; /* Alinear verticalmente el contenido */
+    justify-content: space-between; /* Espacio entre logo y campo de búsqueda */
+    background-color: #333;
+    padding: 20px 0;
+    color: #ffffff;
+    position: relative; /* Asegura que el encabezado esté en el flujo del documento */
+    z-index: 2; /* Asegura que el encabezado esté encima del fondo */
+    
+}
+/* Ajustar el campo de búsqueda */
+#search-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    font-size: 16px;
+}
+.nav-container {
+    display: flex;                     /* Flexbox para la navegación y el campo de búsqueda */
+    align-items: center;               /* Alinear verticalmente */
+}
+.header .container {
+    text-align: center; /* Centrar contenido del encabezado */
+}
+.cart-link {
+    display: flex;                /* Flexbox para centrar el icono */
+    align-items: center;         /* Alinear verticalmente */
+    margin-left: 15px;          /* Espacio a la izquierda del carrito */
+}
+
+.cart-icon {
+    width: 30px;                 /* Ajusta el tamaño según necesites */
+    height: auto;                /* Mantiene la proporción de la imagen */
+}
+/* Contenedor principal */
+.content-container {
+    display: grid; /* Cambiar a grid para organizar columnas y filas */
+    grid-template-columns: repeat(3, 1fr) 300px; /* 3 columnas para productos y una columna para el video */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 200px); /* Dos columnas de ancho fijo (ajusta el tamaño a tus necesidades) */
+    grid-template-rows: repeat(1, auto);     /* Tres filas */
+    flex-wrap: wrap;
+    flex: 2; /* Ocupa más espacio que el video */
+    gap: 20px;
+    justify-content: start;
+    max-width: 420px;
+    padding: 0 20px; /* Añade un padding igual a ambos lados */
+}
+.video-container {
+    grid-column: 4; /* Columna 4 para el video */
+    grid-row: span 2; /* Hacer que el video ocupe dos filas */
+    display: flex; /* Para centrar el video */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+.video-container iframe {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Altura automática */
+    aspect-ratio: 16 / 9; /* Mantener la proporción 16:9 del video */
+}
+.fragancias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px; /* Ajusta el espacio entre productos según prefieras */
+}
+.relojes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-rows: repeat(2, auto); /* Dos filas */
+    gap: 20px; /* Espacio entre productos */
+    justify-content: end; /* Alinear al lado derecho */
+    max-width: 420px; /* Ajusta el ancho máximo según sea necesario */
+    margin-left: auto; /* Esto asegura que se alinee a la derecha */
+    margin-right: 0; /* Sin margen a la derecha */
+    padding: 0 20px; /* Añade un padding igual a ambos lados */
+}
+.product-card {
+    background-color: #5c9fbe;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.product-card button {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #555;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+.nav-menu li {
+    margin: 0;            /* Espacio entre los elementos de menú */
+}
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu a:hover {
+    color: #ffffff;
+}
+#search-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #fffefe;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+/* Secciones */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 26px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
